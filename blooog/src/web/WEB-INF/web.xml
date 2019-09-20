@@ -7,7 +7,7 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <!-- 这里使用的是以spring*.xml的通配符方式加载配置的 -->
-        <param-value>classpath:spring*.xml</param-value>
+        <param-value>classpath:applicationContext.xml</param-value>
     </context-param>
     <!--Spring的ApplicationContext 载入 -->
     <listener>
@@ -37,7 +37,7 @@
         <init-param>
             <!-- 指定加载外部的spring-mvc配置文件 -->
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:springmvc.xml</param-value>
+            <param-value>classpath:spring-mvc.xml</param-value>
         </init-param>
         <!-- 这个可以不配，可以省略 -->
         <load-on-startup>1</load-on-startup>
