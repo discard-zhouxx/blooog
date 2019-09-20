@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1d394db-e138-495a-93b8-5a078e4c8fd1" name="Default Changelist" comment="" />
+    <list default="true" id="b1d394db-e138-495a-93b8-5a078e4c8fd1" name="Default Changelist" comment="update conf">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Van.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/WEB-INF/web.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +38,7 @@
   <component name="ProjectId" id="1R6e6CHZpHhaYjIod7iafVxxB88" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -58,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1568991794747</updated>
       <workItem from="1568991796770" duration="1048000" />
-      <workItem from="1568998176768" duration="264000" />
+      <workItem from="1568998176768" duration="2690000" />
     </task>
     <task id="LOCAL-00001" summary="spring-mvc.xml">
       <created>1568998376097</created>
@@ -67,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568998376097</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="spring-mvc.xml">
+      <created>1568998460873</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1568998460873</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,6 +106,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="spring-mvc.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="spring-mvc.xml" />
+    <MESSAGE value="update conf" />
+    <option name="LAST_COMMIT_MESSAGE" value="update conf" />
   </component>
 </project>

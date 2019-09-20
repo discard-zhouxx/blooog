@@ -5,7 +5,9 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <context:component-scan base-package="top.vanbyz"/>
+    <context:component-scan base-package="top.vanbyz">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
     <!-- 加载资源文件 -->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <!-- 配置资源文件 -->
@@ -17,11 +19,13 @@
     </bean>
     <!--spring 配置连接池，数据源 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
-        <property name="driver" value="${driver}"></property>
-        <property name="url" value="${url}"></property>
-        <property name="username" value="${username}"></property>
-        <property name="password" value="${password}"></property>
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
     </bean>
+
+    <!-- 事务管理器 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />
     </bean>
@@ -39,9 +43,19 @@
         </tx:attributes>
     </tx:advice>
     <aop:config>
-        <aop:pointcut id="txPoint" expression="execution(* top.vanbyz.service.*.*(..))"/>
-        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPoint"></aop:advisor>
+        <aop:pointcut id="txPoint" expression="execution(* top.vanbyz.service..*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPoint"/>
     </aop:config>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configuration" value="classpath:spring-mybatis.xml"/>
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+    </bean>
+
+    <bean id="mapperScan" class="org.mybatis.spring.annotation.MapperScannerRegistrar" >
+        <property name="resourceLoader" value="top.vanbyz.dao"/>
+    </bean>
 
 
 </beans>
