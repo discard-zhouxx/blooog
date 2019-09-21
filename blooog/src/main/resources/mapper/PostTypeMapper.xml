@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.vanbyz.dao.PostTypeMapper">
+  <resultMap id="BaseResultMap" type="top.vanbyz.pojo.PostType">
+    <id column="post_type_id" jdbcType="TINYINT" property="postTypeId" />
+    <result column="post_type_name" jdbcType="VARCHAR" property="postTypeName" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    post_type_id, post_type_name
+  </sql>
+  <select id="selectByExample" parameterType="top.vanbyz.pojo.PostTypeExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from post_type
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Byte" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from post_type
+    where post_type_id = #{postTypeId,jdbcType=TINYINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Byte">
+    delete from post_type
+    where post_type_id = #{postTypeId,jdbcType=TINYINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="top.vanbyz.pojo.PostTypeExample">
+    delete from post_type
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="top.vanbyz.pojo.PostType">
+    insert into post_type (post_type_id, post_type_name)
+    values (#{postTypeId,jdbcType=TINYINT}, #{postTypeName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="top.vanbyz.pojo.PostType">
+    insert into post_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="postTypeId != null">
+        post_type_id,
+      </if>
+      <if test="postTypeName != null">
+        post_type_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="postTypeId != null">
+        #{postTypeId,jdbcType=TINYINT},
+      </if>
+      <if test="postTypeName != null">
+        #{postTypeName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="top.vanbyz.pojo.PostTypeExample" resultType="java.lang.Long">
+    select count(*) from post_type
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update post_type
+    <set>
+      <if test="record.postTypeId != null">
+        post_type_id = #{record.postTypeId,jdbcType=TINYINT},
+      </if>
+      <if test="record.postTypeName != null">
+        post_type_name = #{record.postTypeName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update post_type
+    set post_type_id = #{record.postTypeId,jdbcType=TINYINT},
+      post_type_name = #{record.postTypeName,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="top.vanbyz.pojo.PostType">
+    update post_type
+    <set>
+      <if test="postTypeName != null">
+        post_type_name = #{postTypeName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where post_type_id = #{postTypeId,jdbcType=TINYINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="top.vanbyz.pojo.PostType">
+    update post_type
+    set post_type_name = #{postTypeName,jdbcType=VARCHAR}
+    where post_type_id = #{postTypeId,jdbcType=TINYINT}
+  </update>
+</mapper>

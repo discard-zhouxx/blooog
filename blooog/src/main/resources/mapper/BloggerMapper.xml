@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.vanbyz.dao.BloggerMapper">
+  <resultMap id="BaseResultMap" type="top.vanbyz.pojo.Blogger">
+    <result column="blogger_name" jdbcType="VARCHAR" property="bloggerName" />
+    <result column="blogger_password" jdbcType="VARCHAR" property="bloggerPassword" />
+    <result column="blogger_address" jdbcType="VARCHAR" property="bloggerAddress" />
+    <result column="blogger_signature" jdbcType="VARCHAR" property="bloggerSignature" />
+    <result column="blogger_email" jdbcType="VARCHAR" property="bloggerEmail" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    blogger_name, blogger_password, blogger_address, blogger_signature, blogger_email
+  </sql>
+  <select id="selectByExample" parameterType="top.vanbyz.pojo.BloggerExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from blogger
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="top.vanbyz.pojo.BloggerExample">
+    delete from blogger
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="top.vanbyz.pojo.Blogger">
+    insert into blogger (blogger_name, blogger_password, blogger_address, 
+      blogger_signature, blogger_email)
+    values (#{bloggerName,jdbcType=VARCHAR}, #{bloggerPassword,jdbcType=VARCHAR}, #{bloggerAddress,jdbcType=VARCHAR}, 
+      #{bloggerSignature,jdbcType=VARCHAR}, #{bloggerEmail,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="top.vanbyz.pojo.Blogger">
+    insert into blogger
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bloggerName != null">
+        blogger_name,
+      </if>
+      <if test="bloggerPassword != null">
+        blogger_password,
+      </if>
+      <if test="bloggerAddress != null">
+        blogger_address,
+      </if>
+      <if test="bloggerSignature != null">
+        blogger_signature,
+      </if>
+      <if test="bloggerEmail != null">
+        blogger_email,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bloggerName != null">
+        #{bloggerName,jdbcType=VARCHAR},
+      </if>
+      <if test="bloggerPassword != null">
+        #{bloggerPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="bloggerAddress != null">
+        #{bloggerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="bloggerSignature != null">
+        #{bloggerSignature,jdbcType=VARCHAR},
+      </if>
+      <if test="bloggerEmail != null">
+        #{bloggerEmail,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="top.vanbyz.pojo.BloggerExample" resultType="java.lang.Long">
+    select count(*) from blogger
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update blogger
+    <set>
+      <if test="record.bloggerName != null">
+        blogger_name = #{record.bloggerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bloggerPassword != null">
+        blogger_password = #{record.bloggerPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bloggerAddress != null">
+        blogger_address = #{record.bloggerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bloggerSignature != null">
+        blogger_signature = #{record.bloggerSignature,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bloggerEmail != null">
+        blogger_email = #{record.bloggerEmail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update blogger
+    set blogger_name = #{record.bloggerName,jdbcType=VARCHAR},
+      blogger_password = #{record.bloggerPassword,jdbcType=VARCHAR},
+      blogger_address = #{record.bloggerAddress,jdbcType=VARCHAR},
+      blogger_signature = #{record.bloggerSignature,jdbcType=VARCHAR},
+      blogger_email = #{record.bloggerEmail,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

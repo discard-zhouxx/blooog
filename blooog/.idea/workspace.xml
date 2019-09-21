@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1d394db-e138-495a-93b8-5a078e4c8fd1" name="Default Changelist" comment="update conf">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Van.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/mapper.xml" afterDir="false" />
+    <list default="true" id="b1d394db-e138-495a-93b8-5a078e4c8fd1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/ssm.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/dao/BloggerMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/dao/CommentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/dao/MessageBoardMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/dao/PostMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/dao/PostTypeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/pojo/Blogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/pojo/BloggerExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/pojo/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/pojo/CommentExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/pojo/MessageBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/pojo/MessageBoardExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/pojo/Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/pojo/PostExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/pojo/PostType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/pojo/PostTypeExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/top/vanbyz/utils/MbgMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/BloggerMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/MessageBoardMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/PostMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/PostTypeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mybatis-generator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Van.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Van.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/mapper.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,10 +40,41 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="blooog@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="blooog@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="blooog@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="blooog: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -36,12 +89,16 @@
     </option>
   </component>
   <component name="ProjectId" id="1R6e6CHZpHhaYjIod7iafVxxB88" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.41819853" />
     <property name="settings.editor.selected.configurable" value="spring" />
@@ -58,6 +115,46 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="MbgMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="top.vanbyz.utils.MbgMain" />
+      <module name="blooog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.vanbyz.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MbgMain" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5510f705" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5510f705" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@17ee8bcb" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -69,7 +166,8 @@
       <option name="presentableId" value="Default" />
       <updated>1568991794747</updated>
       <workItem from="1568991796770" duration="1048000" />
-      <workItem from="1568998176768" duration="2690000" />
+      <workItem from="1568998176768" duration="3069000" />
+      <workItem from="1569035262855" duration="4064000" />
     </task>
     <task id="LOCAL-00001" summary="spring-mvc.xml">
       <created>1568998376097</created>
@@ -85,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568998460873</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update conf">
+      <created>1569000919874</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569000919874</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +210,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="spring-mvc.xml" />
     <MESSAGE value="update conf" />
     <option name="LAST_COMMIT_MESSAGE" value="update conf" />
